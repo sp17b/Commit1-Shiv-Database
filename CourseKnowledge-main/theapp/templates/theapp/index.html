@@ -1,0 +1,20 @@
+{% if all_schools %}
+	<h3>Schools:</h3>
+	<u1>
+		{% for school in all_schools %}
+		<li><a href="{% url 'theapp:detail' school.pk %}">{{school.schoolname}}</a></li>
+		<!-- Old code
+			<li><a href="/theapp/{{ school.pk }}/">{{school.schoolname}}</a></li> 
+		-->
+		{% endfor %}
+	</u1>
+{% else %}
+	<h3>No schools</h3>
+{% endif %}
+
+<li>
+	<a href="{% url 'theapp:school-add' %}">
+		Add
+	</a>
+</li>
+	
